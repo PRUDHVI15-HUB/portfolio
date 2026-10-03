@@ -62,7 +62,7 @@ function useTypingCycle(texts, interval = 2800) {
 
 function Terminal() {
   const [visibleLines, setVisibleLines] = useState([]);
-  const endRef = useRef(null);
+  const bodyRef = useRef(null);
 
   useEffect(() => {
     const timers = TERMINAL_LINES.map((line, i) =>
@@ -72,7 +72,9 @@ function Terminal() {
   }, []);
 
   useEffect(() => {
-    endRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    if (bodyRef.current) {
+      bodyRef.current.scrollTop = bodyRef.current.scrollHeight;
+    }
   }, [visibleLines]);
 
   return (
@@ -85,7 +87,7 @@ function Terminal() {
         </div>
         <span className="terminal__title">prudhvi@portfolio ~ zsh</span>
       </div>
-      <div className="terminal__body">
+      <div className="terminal__body" ref={bodyRef}>
         {TERMINAL_LINES.map((line, i) => (
           <div
             key={i}
@@ -96,7 +98,6 @@ function Terminal() {
             <span className="terminal__text">{line.text}</span>
           </div>
         ))}
-        <div ref={endRef} />
         <span className="terminal__cursor" aria-hidden="true">▋</span>
       </div>
     </div>
