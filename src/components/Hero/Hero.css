@@ -356,10 +356,19 @@
 
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 900px) {
+  .hero {
+    min-height: auto;
+    align-items: flex-start;
+    padding-top: var(--nav-height);
+    overflow: visible;
+  }
+
   .hero__inner {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
     text-align: center;
+    padding-top: 28px;
+    padding-bottom: 56px;
   }
 
   .hero__content {
@@ -387,9 +396,19 @@
   .floating-badge {
     display: none;
   }
+
+  .hero__scroll {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
+  .hero__inner {
+    padding-top: 24px;
+    padding-bottom: 40px;
+    gap: 32px;
+  }
+
   .hero__name {
     font-size: clamp(2.2rem, 10vw, 3rem);
   }
