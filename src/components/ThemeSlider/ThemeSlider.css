@@ -1,0 +1,128 @@
+/* ── Draggable Theme Slider Switch ────────────────────────── */
+.theme-slider {
+  position: relative;
+  width: 62px;
+  height: 32px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  padding: 3px;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  outline: none;
+}
+
+.theme-slider:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 3px;
+}
+
+.theme-slider--dragging {
+  cursor: grabbing !important;
+}
+
+/* ── Light Mode Appearance (Resting on Left) ──────────────── */
+.theme-slider--light {
+  background: #e2e8f0;
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.theme-slider--light:hover {
+  border-color: rgba(2, 132, 199, 0.4);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06), 0 0 10px rgba(2, 132, 199, 0.15);
+}
+
+/* ── Dark Mode Appearance (Matches User Reference Image) ──── */
+.theme-slider--dark {
+  background: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.theme-slider--dark:hover {
+  box-shadow: 0 2px 14px rgba(6, 182, 212, 0.35), 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-color: var(--accent-cyan);
+}
+
+/* ── Background Track Icons ───────────────────────────────── */
+.theme-slider__track-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.theme-slider__track-sun {
+  left: 8px;
+  color: #d97706;
+  opacity: 0.7;
+}
+
+.theme-slider--light .theme-slider__track-sun {
+  opacity: 0; /* Hidden under thumb when on left */
+}
+
+.theme-slider__track-moon {
+  right: 8px;
+  color: #475569;
+  opacity: 0.7;
+}
+
+.theme-slider--dark .theme-slider__track-moon {
+  opacity: 0; /* Hidden under thumb when on right */
+}
+
+/* ── Draggable Thumb (Knob) ───────────────────────────────── */
+.theme-slider__thumb {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  will-change: transform;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* Thumb in Dark Mode: Solid Pitch Black with White Moon (Exact User Reference) */
+.theme-slider--dark .theme-slider__thumb {
+  background: #000000;
+  color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.9);
+}
+
+/* Thumb in Light Mode: Golden Sun */
+.theme-slider--light .theme-slider__thumb {
+  background: #f59e0b;
+  color: #ffffff;
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4), 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.theme-slider__thumb-icon {
+  width: 15px;
+  height: 15px;
+  pointer-events: none;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.theme-slider:hover .theme-slider__thumb-icon {
+  transform: scale(1.08);
+}
+
+.theme-slider--dragging .theme-slider__thumb {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  transform-origin: center;
+}

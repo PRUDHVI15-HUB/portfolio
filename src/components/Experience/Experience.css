@@ -1,0 +1,123 @@
+.exp-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.exp-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.exp-card:hover {
+  border-color: color-mix(in srgb, var(--exp-color) 30%, transparent);
+  transform: translateX(4px);
+}
+
+.exp-card__accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--exp-color);
+  border-radius: 999px;
+  opacity: 0.8;
+}
+
+.exp-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.exp-card__title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.exp-card__role {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+}
+
+.exp-card__company {
+  font-size: 0.9rem;
+  color: var(--exp-color);
+  font-weight: 500;
+}
+
+.exp-card__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  text-align: right;
+}
+
+.exp-card__period {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.exp-card__location {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.exp-card__description {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.exp-card__responsibilities {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exp-card__resp-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.exp-card__resp-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--exp-color);
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+  .exp-card__header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .exp-card__meta {
+    align-items: flex-start;
+    text-align: left;
+  }
+}

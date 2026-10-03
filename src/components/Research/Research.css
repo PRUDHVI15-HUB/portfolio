@@ -1,0 +1,126 @@
+.research-card {
+  display: flex;
+  gap: 28px;
+  background: var(--bg-card);
+  border: 1px solid rgba(16,185,129,0.2);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  max-width: 800px;
+  transition: all var(--transition-base);
+}
+
+.research-card:hover {
+  border-color: rgba(16,185,129,0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 48px rgba(16,185,129,0.06);
+}
+
+.research-card__icon-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 0;
+}
+
+.research-card__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: rgba(16,185,129,0.12);
+  border: 1px solid rgba(16,185,129,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-green);
+}
+
+.research-card__line {
+  width: 2px;
+  flex: 1;
+  background: linear-gradient(to bottom, rgba(16,185,129,0.3), transparent);
+  margin-top: 12px;
+}
+
+.research-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.research-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.research-card__journal {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent-green);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.research-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.research-card__desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+.research-card__topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.research-card__footer {
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.research-card__paperid {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.research-card__paperid code {
+  font-family: var(--font-mono);
+  background: rgba(255,255,255,0.05);
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: var(--accent-green);
+  font-size: 0.78rem;
+}
+
+@media (max-width: 600px) {
+  .research-card {
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+  }
+
+  .research-card__icon-col {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .research-card__line {
+    width: 40px;
+    height: 2px;
+    flex: none;
+    margin: 0 0 0 12px;
+    background: linear-gradient(to right, rgba(16,185,129,0.3), transparent);
+  }
+}

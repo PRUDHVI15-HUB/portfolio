@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Projvanta">
+  <!--
+    Projvanta favicon: the first tile of the brand wordmark — a solid dark
+    rounded square with a white "P", matching the tiled PROJVANTA logo.
+  -->
+  <rect width="512" height="512" rx="96" fill="#17181C"/>
+  <text
+    x="256"
+    y="276"
+    dominant-baseline="central"
+    text-anchor="middle"
+    fill="#FAFAFA"
+    font-family="'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif"
+    font-weight="700"
+    font-size="320"
+  >P</text>
+</svg>

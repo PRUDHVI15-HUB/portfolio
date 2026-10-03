@@ -1,0 +1,64 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="50%" stop-color="#0D9488" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+
+    <linearGradient id="cubeTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+
+    <linearGradient id="cubeLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+
+    <linearGradient id="cubeRight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#047857" />
+      <stop offset="100%" stop-color="#064E3B" />
+    </linearGradient>
+
+    <filter id="bcGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#059669" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Background Squircle -->
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="url(#bcGrad)" />
+
+  <g filter="url(#bcGlow)">
+    <!-- Central Decentralized Storage Vault Cube -->
+    <!-- Top Face -->
+    <path d="M256 128 L376 196 L256 264 L136 196 Z" fill="url(#cubeTop)" stroke="#A7F3D0" stroke-width="4" stroke-linejoin="round" />
+    <!-- Left Face -->
+    <path d="M136 196 L256 264 V384 L136 316 Z" fill="url(#cubeLeft)" stroke="#A7F3D0" stroke-width="4" stroke-linejoin="round" />
+    <!-- Right Face -->
+    <path d="M256 264 L376 196 V316 L256 384 Z" fill="url(#cubeRight)" stroke="#A7F3D0" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Center Cryptographic Lock Symbol -->
+    <rect x="234" y="278" width="44" height="34" rx="6" fill="#F8FAFC" />
+    <path d="M242 278 V264 C242 254 270 254 270 264 V278" stroke="#F8FAFC" stroke-width="5" stroke-linecap="round" fill="none" />
+    <circle cx="256" cy="293" r="4" fill="#0F766E" />
+    <path d="M256 295 V305" stroke="#0F766E" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Blockchain Decentralized Satellite Nodes -->
+    <!-- Top Node -->
+    <circle cx="256" cy="74" r="14" fill="#34D399" stroke="#FFFFFF" stroke-width="3" />
+    <line x1="256" y1="88" x2="256" y2="128" stroke="#34D399" stroke-width="3" stroke-dasharray="4 4" />
+
+    <!-- Left Node -->
+    <circle cx="74" cy="256" r="14" fill="#34D399" stroke="#FFFFFF" stroke-width="3" />
+    <line x1="88" y1="256" x2="136" y2="256" stroke="#34D399" stroke-width="3" stroke-dasharray="4 4" />
+
+    <!-- Right Node -->
+    <circle cx="438" cy="256" r="14" fill="#34D399" stroke="#FFFFFF" stroke-width="3" />
+    <line x1="424" y1="256" x2="376" y2="256" stroke="#34D399" stroke-width="3" stroke-dasharray="4 4" />
+
+    <!-- Bottom Node -->
+    <circle cx="256" cy="438" r="14" fill="#34D399" stroke="#FFFFFF" stroke-width="3" />
+    <line x1="256" y1="424" x2="256" y2="384" stroke="#34D399" stroke-width="3" stroke-dasharray="4 4" />
+  </g>
+</svg>
