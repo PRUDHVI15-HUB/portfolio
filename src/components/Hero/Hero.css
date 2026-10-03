@@ -360,7 +360,7 @@
     min-height: auto;
     align-items: flex-start;
     padding-top: var(--nav-height);
-    overflow: visible;
+    overflow: hidden;
   }
 
   .hero__inner {

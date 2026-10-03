@@ -3,6 +3,9 @@
   top: 0;
   left: 0;
   right: 0;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
   z-index: 1000;
   height: var(--nav-height);
   display: flex;
@@ -20,10 +23,12 @@
 }
 
 .navbar__inner {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 16px;
+  box-sizing: border-box;
 }
 
 /* Logo */
@@ -157,6 +162,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 /* Hamburger */
@@ -172,11 +178,24 @@
   color: var(--text-primary);
   cursor: pointer;
   transition: all var(--transition-fast);
+  flex-shrink: 0;
 }
 
 .navbar__hamburger:hover {
   border-color: var(--accent-cyan);
   color: var(--accent-cyan);
+}
+
+@media (max-width: 480px) {
+  .navbar__inner {
+    padding-left: 12px;
+    padding-right: 12px;
+    gap: 8px;
+  }
+
+  .navbar__mobile-controls {
+    gap: 6px;
+  }
 }
 
 /* Mobile Menu */
